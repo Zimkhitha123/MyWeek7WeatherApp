@@ -111,9 +111,9 @@ weather-app-temperature {
     Humidity:<strong id = "humidity"></strong>, Wind: <strong id ="windspeed">/h</strong>
             </p> </div>
             <div class="weather-app-temperature">
-                <div class ="weather-app-icon"><img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png";
+            <div id="icon">
+                            </div>
                 </div> <div class ="weather-app-temperature-value"> 12 </div><div class="weather-app-unt">&deg C</div> </div>
-        </div>
 </main>
   </body>
 <footer>
@@ -140,7 +140,10 @@ weather-app-temperature {
         let timeElement = document.querySelector("#time");
         timeElement.innerHTML=formatDate(date);
         let date = new Date(response.data.time *1000);
-    
+        let iconElement = document.querySelector("#icon");
+        iconElement.innerHTML =  `<img src="${response.data.condotion.icon_Url}" class ="weather-app-icon"/>`;
+
+    let icon.innerHTML = `img
     }
     function searchcity(city){
         let apiKey = "d30t4b87a85aoafbb624a05843fdcb6d"

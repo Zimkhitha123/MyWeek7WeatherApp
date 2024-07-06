@@ -106,9 +106,9 @@ weather-app-temperature {
          Paris
     </h1> 
     <p class="weather-app-details">
-    Tuesday 14:49 , Scattered Clouds
+    <span id="time"></span> , <span id="description">
     <br/>
-    Humidity:<strong>66%</strong>, Wind: <strong>3.13km/h</strong>
+    Humidity:<strong id = "humidity"></strong>, Wind: <strong id ="windspeed">/h</strong>
             </p> </div>
             <div class="weather-app-temperature">
                 <div class ="weather-app-icon">🌤️ </div> <div class ="weather-app-temperature-value"> 12 </div><div class="weather-app-unt">&deg C</div> </div>
@@ -130,6 +130,16 @@ weather-app-temperature {
         let temperature = response.data.temperature.current;
         let cityElement = document.querySelector("#city");
         cityElement.innerHTML = Math.round(temperature);
+        let descriptionElement = document.querySelector("#description");
+        descriptionElement.innerHTML = response.data.condotion.description;
+        let HumidityElement = document.querySelector("#humidity")
+        HumidityElement.innerHTML = `${response.data.temperature.humidity,%`}
+        let windSpeedElement = document.querySelector("#windspeed");
+        windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
+        let timeElement = document.querySelector("#time");
+        timeElement.innerHTML=formatDate(date);
+        let date = new Date(response.data.time *1000);
+    
     }
     function searchcity(city){
         let apiKey = "d30t4b87a85aoafbb624a05843fdcb6d"
@@ -140,6 +150,17 @@ weather-app-temperature {
         event.preventDefault();
         let searchInput = document.querySelector("#search-form-input");
     searchcity("paris")
+    }
+    function formatDate(date){
+        let day = date.getDay();
+        let minutes = date.getMinutes();
+        let hours = date.getHours();
+        let days = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+        let day = days[date.getDay()];
+        if (minutes < 10){
+            minutes = `0${minutes}`;
+        }
+        return `${day} ${hours}:${minutes}`;
     }
 let seachFormElement = document.querySelector("#search-form");
 seachFormElement.addEventListener("#Submit" , handlesearchsubmit);

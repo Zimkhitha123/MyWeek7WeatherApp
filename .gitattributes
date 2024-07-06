@@ -111,7 +111,8 @@ weather-app-temperature {
     Humidity:<strong id = "humidity"></strong>, Wind: <strong id ="windspeed">/h</strong>
             </p> </div>
             <div class="weather-app-temperature">
-                <div class ="weather-app-icon">🌤️ </div> <div class ="weather-app-temperature-value"> 12 </div><div class="weather-app-unt">&deg C</div> </div>
+                <div class ="weather-app-icon"><img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png";
+                </div> <div class ="weather-app-temperature-value"> 12 </div><div class="weather-app-unt">&deg C</div> </div>
         </div>
 </main>
   </body>

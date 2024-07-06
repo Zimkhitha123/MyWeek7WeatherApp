@@ -124,5 +124,17 @@ weather-app-temperature {
     </p>
   </footer>
   </div>
+  <script>
+    function handlesearchsubmit(event){
+        event.preventDefault();
+        let searchInput = document.querySelector("#search-form-input");
+        let cityElement = document.querySelector("#city");
+        cityElement.innerHTML = searchInput.value;
+    }
+let seachFormElement = document.querySelector("#search-form");
+seachFormElement.addEventListener("#Submit" , handlesearchsubmit);
+
+</script>
+<script src="src/index.js"></script>
 </html>
 

@@ -125,11 +125,21 @@ weather-app-temperature {
   </footer>
   </div>
   <script>
+    function updateweather(response){
+        let temperatureElement = document.querySelector("#temperature");
+        let temperature = response.data.temperature.current;
+        let cityElement = document.querySelector("#city");
+        cityElement.innerHTML = Math.round(temperature);
+    }
+    function searchcity(city){
+        let apiKey = "d30t4b87a85aoafbb624a05843fdcb6d"
+        let apiUrl = `https://api.shecodes.io/weather/v1/current?query= ${city}&key=${apiKey}`
+        axios.get(apiUrl).then(updateweather);
+    }
     function handlesearchsubmit(event){
         event.preventDefault();
         let searchInput = document.querySelector("#search-form-input");
-        let cityElement = document.querySelector("#city");
-        cityElement.innerHTML = searchInput.value;
+    searchcity("paris")
     }
 let seachFormElement = document.querySelector("#search-form");
 seachFormElement.addEventListener("#Submit" , handlesearchsubmit);

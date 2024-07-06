@@ -8,10 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<style>
-body{
+<body{
     background : #f9f7fe;
-        font-family: "Roboto", sans-serif;
+    font-family: "Roboto", sans-serif;
 
 }
 
@@ -23,26 +22,97 @@ body{
         box-shadow: 0 30px 50px rgba(65,50,100,0.08);
         border-radius: 11px;
     }
-   
+    .search-form-input {
+        background-color: #f9f7fe;
+        border: none;
+        border-radius: 6px;
+        width: 80%;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    .search-form-button {
+        background-color: purple;
+        border: none;
+        color: white;
+        border-radius: 6px;
+        padding: 15px 30px;
+        font-size: 16px; 
+        margin-left: 5px;
+    }
+     header {
+        border-bottom: 1px solid #f9f7fe;
+        padding: 0 0 3px 0;
+    }
+    footer {
+        border-top: 1px solid #f9f7fe;
+        padding: 30px 0 0 0;
+        text-align: center;
+        font-size: 13px;
+        color: rgba(0 0 0 0.6);
+    }
+    a{
+        color: #885df1;
+    }
+    .weather-app-data{
+        display: flex;
+        justify-content: space-between;
+    }
+    main{
+        padding: 30px 0;
+    }
+     .weather-app-city{
+        margin: 0;
+font-size: 38px;
+line-height: 48px;
+}
+.weather-app-details{
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(39,33,66,0.4);
+    font-weight: 500;
+}
+.weather-app-details strong {
+    color: #f65282;
+}
+weather-app-temperature {
+    display: flex;
+}
+.weather-app-temperature-value {
+    font-size: 88px;
+    font-weight: bold;
+    margin-left: 10px;
+    line-height: 88px;
+}
+.weather-app-icon {
+    font-size: 44px;
+    margin-top: 22px;
+}
+.weather-app-unit {
+    margin-top: 6px;
+    font-size: 28px;
+}
 </style>
 <body>
 <div class = "Weather-App">
 <header>
-<form>
-<input type = "Search" placeholder = "Enter a city" required/>
-<input type = "Submit" value = "Search"/>
+<form class="search-form">
+<input type = "Search" placeholder = "Enter a city" required class="search-form-input"/>
+<input type = "Submit" value = "Search" class="search-form-button"/>
 </form>
 </header>
-<main><div>
-    <h1>
+<main><div >
+        <div class="weather-app-data" >  
+    <h1 class="weather-app-city">
          Paris
     </h1> 
-    <p>
+    <p class="weather-app-details">
     Tuesday 14:49 , Scattered Clouds
     <br/>
-    Humidity:66% , Wind:3:13km/h
-    </p> </div> 
-    <div> 🌤️ 12 &deg </div>
+    Humidity:<strong>66%</strong>, Wind: <strong>3.13km/h</strong>
+            </p> </div>
+            <div class="weather-app-temperature">
+                <div class ="weather-app-icon">🌤️ </div> <div class ="weather-app-temperature-value"> 12 </div><div class="weather-app-unt">&deg C</div> </div>
+        </div>
 </main>
   </body>
 <footer>
